@@ -1,0 +1,193 @@
+
+.staff-dashboard {
+  margin-top: 110px;
+  padding: 42px 40px;
+  width: 100%;
+  box-sizing: border-box;
+  background: #f5f7fb;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.staff-dashboard h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  color: #1f2933;
+}
+
+.cohort-name {
+  color: #6b7280;
+  margin: 6px 0 24px;
+  font-size: 14px;
+}
+
+/* ==== SUMMARY / FUNNEL STRIP ========================================= */
+
+.summary-grid {
+  display: grid;
+  grid-auto-flow: column;                 /* force left → right flow */
+  grid-auto-columns: minmax(160px, 1fr);  /* each tile at least 160px */
+  gap: 12px 32px;                         /* horizontal gap leaves room for arrow */
+  align-items: center;
+  margin-bottom: 32px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  overflow-x: auto;
+}
+
+/* hide scrollbar on WebKit, but keep scrollable if overflow */
+.summary-grid::-webkit-scrollbar {
+  height: 6px;
+}
+.summary-grid::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 999px;
+}
+
+.summary-card {
+  position: relative;
+  background: #f9fafb;
+  padding: 14px 16px;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e5e7eb;
+  min-width: 150px;
+  height: 120px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+/* light color strip at top for fun */
+.summary-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 9px;
+  border-radius: 12px 12px 0 0;
+  background: linear-gradient(90deg, #ee4344, #f97316);
+}
+
+/* arrow between tiles */
+.summary-card:not(:last-child)::after {
+  content: "➜";
+  position: absolute;
+  top: 50%;
+  right: -22px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #9ca3af;
+}
+
+/* Hover effect */
+.summary-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+  border-color: #d1d5db;
+}
+
+.summary-card p {
+  margin: 8px 0 2px;
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.summary-card h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* smaller screens: stack a bit nicer */
+@media (max-width: 800px) {
+  .summary-grid {
+    grid-auto-flow: row;
+    grid-auto-columns: unset;
+  }
+
+  .summary-card:not(:last-child)::after {
+    display: none;
+  }
+}
+
+/* ==== TABLE =========================================================== */
+
+.staff-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 8px;
+  margin-bottom: 32px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.staff-table thead {
+  background: #f3f4f6;
+}
+
+.staff-table th,
+.staff-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.staff-table th {
+  font-weight: 600;
+  color: #4b5563;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.staff-table tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.staff-table tbody tr:hover {
+  background-color: #eef2ff;
+}
+
+.trainee-name-link {
+  color: #ee4344;
+  font-weight: 600;
+}
+
+/* ==== PIE CHART SECTION ============================================== */
+
+.pie-section {
+  margin-top: 32px;
+  max-width: 520px;
+  background: #ffffff;
+  padding: 20px 22px 24px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.pie-section h2 {
+  margin: 0 0 16px;
+  font-size: 18px;
+  color: #111827;
+}
+
+/* ==== RESPONSIVE TWEAKS ============================================== */
+
+@media (max-width: 1024px) {
+  .staff-dashboard {
+    padding: 24px 16px;
+  }
+
+  .staff-table {
+    font-size: 12px;
+    overflow-x: auto;
+    display: block;
+  }
+}

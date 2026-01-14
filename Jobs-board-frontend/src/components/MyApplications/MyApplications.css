@@ -1,0 +1,84 @@
+/* Overall layout: board on left, comments on right */
+.applications-layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  
+}
+
+/* Board area */
+.applications-board {
+  display: flex;
+  width: 100%;
+  background: #ffffff;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+}
+
+/* Page title & subtitle */
+.applications-title {
+  margin: 0 0 4px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--cyf-primary-dark, #111827);
+}
+
+.applications-subtitle {
+  margin: 0 0 16px;
+  font-size: 14px;
+  color: var(--cyf-font, #4b5563);
+}
+
+/* Comments column on the right */
+/* .applications-comments {
+  flex: 1.4;
+  min-width: 260px;
+  max-width: 360px;
+  position: sticky;
+  top: 90px; 
+  align-self: flex-start;
+} */
+
+/* When there is no mentor yet */
+.no-mentor-card {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+  border: 1px dashed #d1d5db;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.no-mentor-card h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Give the JobListView Kanban-like spacing on this page */
+.applications-board .section-title {
+  margin-top: 16px;
+}
+
+.applications-board .jobs-grid {
+  align-items: flex-start;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 1000px) {
+  .applications-layout {
+    flex-direction: column;
+  }
+
+  .applications-comments {
+    position: static;
+    max-width: 100%;
+    width: 100%;
+  }
+}

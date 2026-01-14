@@ -1,0 +1,197 @@
+.mentor-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.mentor-layout {
+  flex: 1;
+  display: flex;
+  /* max-width: 1400px; */
+  margin: 0 auto;
+  width: 100%;
+  padding: 3rem 1.5rem;
+  overflow: hidden;
+  /* background: red; */
+}
+
+.mentor-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  max-height: calc(100vh - 140px);
+  /* background: green; */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.mentor-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.trainee-content {
+  overflow-y: auto;
+  max-height: calc(100vh - 140px);
+  /* padding: 2rem; */
+  /* background-color: green; */
+  margin: 0;
+  padding: 0;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.trainee-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.mentor-content h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.mentor-dropdown-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.mentor-dropdown-section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.mentor-dropdown {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.mentor-dropdown:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+.mentor-dropdown:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.selected-mentor-info {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  color: #155724;
+}
+
+.confirmation-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.confirmation-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.confirmation-content h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.confirmation-content p {
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.confirmation-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.btn-confirm,
+.btn-cancel {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-confirm {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-confirm:hover {
+  background-color: #218838;
+}
+
+.btn-cancel {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-cancel:hover {
+  background-color: #c82333;
+}
+
+.assigned-trainees-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.assigned-trainees-section h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .trainees-list {
+    /* background: blue;  */
+    width: 100%
+  }
+
+  
+}
+
+.trainees-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.no-trainees {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  padding: 2rem;
+}

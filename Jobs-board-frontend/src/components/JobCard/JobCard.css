@@ -1,0 +1,449 @@
+ .job-card {
+  background: var(--cyf-white);
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  margin: 10px 10px;
+  position: relative;
+  transition: border-color 0.3s ease;
+   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .job-card {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0rem auto;
+  }
+
+  .applications-list { 
+    padding: 1rem 0rem;
+  }
+ 
+}
+
+.source-badge {
+ font-size: 20px;
+ margin-bottom: 15px;
+}
+
+.job-card-slack-badge img {
+  width: 30px;
+  height: 30px;
+}
+/* Source line pill badge */
+.source-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.source-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+/* Purple = CYF Slack */
+.source-pill--slack {
+  background: #f3e8ff;
+  color: #6b21a8;
+  border-color: #e9d5ff;
+}
+
+/* Yellow = Platform */
+.source-pill--platform {
+  background: #fef9c3;
+  color: #854d0e;
+  border-color: #fde68a;
+}
+
+.job-card.interested {
+  border: 2px solid #28a745;
+}
+
+
+.interested-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  animation: heartPulse 1.5s ease-in-out infinite;
+}
+
+.star-badge{
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  font-size: 34px;
+  cursor: help; 
+  animation: heartPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes heartPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.job-card .job-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cyf-primary-dark);
+}
+
+.job-card .company {
+  margin: 5px 0 10px;
+  color: var(--cyf-font);
+}
+
+
+.job-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+  align-items: center;
+}
+
+.job-card .apply-link,
+.job-card .interested-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 13px;
+}
+
+.job-card .apply-link {
+  background: var(--cyf-primary-red);
+  color: var(--cyf-white);
+  flex: 0 1 auto;
+}
+
+.job-card .apply-link:hover {
+  background: #c83031;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.interested-btn {
+  background: #f0f0f0;
+  color: #333;
+  border: 2px solid #ddd;
+  flex: 0 1 auto;
+}
+
+.interested-btn:hover:not(:disabled) {
+  background: #e0e0e0;
+  border-color: #28a745;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.interested-btn.interested-active {
+  background: #28a745;
+  color: white;
+  border-color: #28a745;
+  cursor: not-allowed;
+}
+
+.interested-btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.job-card .status-row select {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: var(--cyf-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 13px;
+}
+
+/* Status dropdown (My Applications) */
+.status-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+
+.status-row label {
+  color: #4b5563;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.status-row select {
+  flex: 1;
+  min-width: 150px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 13px;
+  background: #ffffff;
+  outline: none;
+}
+
+.status-row select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25);
+}
+
+/* Comments Section */
+.comments-section {
+  margin-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 15px;
+}
+
+.toggle-comments-btn {
+  background: transparent;
+  border: none;
+  color: #007bff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s;
+}
+
+.toggle-comments-btn:hover {
+  color: #0056b3;
+}
+
+.comments-container {
+  margin-top: 10px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.loading-text,
+.no-comments-text {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  padding: 10px;
+  font-style: italic;
+}
+
+.comments-list {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.comment-item {
+  background: white;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  border-left: 3px solid #007bff;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.comment-author {
+  font-weight: 600;
+  color: #333;
+}
+
+.comment-role {
+  color: #666;
+  font-style: italic;
+}
+
+.comment-date {
+  margin-left: auto;
+  color: #999;
+  font-size: 11px;
+}
+
+.comment-text {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.add-comment-btn {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: opacity 0.2s;
+}
+
+.add-comment-btn:hover {
+  opacity: 0.9;
+}
+
+.plus-icon {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.add-comment-form {
+  margin-top: 10px;
+}
+
+.comment-textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+  min-height: 60px;
+}
+
+.comment-textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.comment-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.post-comment-btn,
+.cancel-comment-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.post-comment-btn {
+  background: #28a745;
+  color: white;
+}
+
+.post-comment-btn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.post-comment-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.cancel-comment-btn {
+  background: #6c757d;
+  color: white;
+}
+
+.cancel-comment-btn:hover {
+  opacity: 0.9;
+}
+
+button:hover {
+  background: green;
+}
+
+.delete-app-btn {
+    /* Ensures no background color is visible */
+    background: transparent !important; 
+    border: none;
+    cursor: pointer;
+    font-size: 18px; 
+    padding: 0;         
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    position: absolute;
+    top: 5px;   
+    right: -130px; 
+}
+
+.status-row {
+    position: relative;
+    padding-right: 20px; 
+    min-height: 25px; 
+    background-color: transparent
+}
+
+/* .delete-app-btn {
+  background: var(--cyf-primary-red);
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  min-width: 36px;
+  height: 36px;
+}
+
+.delete-app-btn:hover {
+  opacity: 1;
+  transform: scale(1.05);
+  background: #dc2626; */
+
+.delete-app-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  color: var(--cyf-primary-red); 
+}
+
+/* Ensure the status row aligns items properly */
+.status-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  gap: 6px;
+  /* ... other status-row styles ... */
+}

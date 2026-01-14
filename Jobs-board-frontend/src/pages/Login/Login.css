@@ -1,0 +1,140 @@
+
+/* :root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  --button-color: #1a3a52;
+  --bg-color: #f0f1f5;
+  --text-dark-color: #202022;
+  --inner-bg: #fff;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f1f5;
+  color: #202022;
+  font-family: inherit;
+  min-height: 100vh;
+}
+
+main {
+  background-color: #f0f1f5;
+  width: 100vw;
+  height: 100vh; /* Changed from min-height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0; /* Remove extra padding */
+}
+
+.login-form-container {
+  background-color: #fff;
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #202022;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 1rem;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f5f5f5;
+}
+
+input:focus {
+  border-color: #1a3a52;
+  outline: 2px solid #1a3a52;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: var(--cyf-primary-red);
+  color: rgb(249, 246, 246);
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+button:hover:not(:disabled) {
+  background-color: #031421;
+}
+
+button:disabled {
+  background-color: #1a3a52;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+a {
+  color: #1a3a52;
+  text-decoration: none;
+  font-weight: 550;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.forgot-password-container {
+  margin-top: 15px;
+  text-align: center;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.forgot-password-container p {
+  margin: 0;
+}
+.password-field {
+  position: relative;
+  width: 100%;
+}
+
+/* Only affects the eye button, not other buttons */
+.toggle-password-btn {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #1a3a52;
+}
