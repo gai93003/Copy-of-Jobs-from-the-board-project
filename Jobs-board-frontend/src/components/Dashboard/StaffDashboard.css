@@ -4,9 +4,9 @@
   padding: 42px 40px;
   width: 100%;
   box-sizing: border-box;
-  background: #f5f7fb;
   min-height: 100vh;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  animation: fadeInUp 0.4s var(--ease) both;
 }
 
 .staff-dashboard h1 {
@@ -32,9 +32,12 @@
   align-items: center;
   margin-bottom: 32px;
   padding: 16px 20px;
-  border-radius: 16px;
-  background: #ffffff;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
   overflow-x: auto;
 }
 
@@ -49,7 +52,7 @@
 
 .summary-card {
   position: relative;
-  background: #f9fafb;
+  background: rgba(249, 250, 251, 0.75);
   padding: 14px 16px;
   border-radius: 12px;
   text-align: left;
@@ -57,7 +60,7 @@
   border: 1px solid #e5e7eb;
   min-width: 150px;
   height: 120px;
-  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), border-color 0.2s var(--ease);
 }
 
 /* light color strip at top for fun */
@@ -83,8 +86,8 @@
 
 /* Hover effect */
 .summary-card:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.14);
   border-color: #d1d5db;
 }
 
@@ -119,16 +122,19 @@
 .staff-table {
   width: 100%;
   border-collapse: collapse;
-  background: #ffffff;
-  border-radius: 16px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   margin-top: 8px;
   margin-bottom: 32px;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  box-shadow: var(--glass-shadow);
 }
 
 .staff-table thead {
-  background: #f3f4f6;
+  background: rgba(243, 244, 246, 0.7);
 }
 
 .staff-table th,
@@ -148,12 +154,16 @@
   z-index: 1;
 }
 
+.staff-table tbody tr {
+  transition: background-color 0.2s var(--ease);
+}
+
 .staff-table tbody tr:nth-child(even) {
-  background-color: #f9fafb;
+  background-color: rgba(249, 250, 251, 0.5);
 }
 
 .staff-table tbody tr:hover {
-  background-color: #eef2ff;
+  background-color: rgba(238, 242, 255, 0.7);
 }
 
 .trainee-name-link {
@@ -166,10 +176,13 @@
 .pie-section {
   margin-top: 32px;
   max-width: 520px;
-  background: #ffffff;
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border);
   padding: 20px 22px 24px;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
 }
 
 .pie-section h2 {

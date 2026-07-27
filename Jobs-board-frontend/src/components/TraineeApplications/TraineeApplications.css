@@ -34,12 +34,14 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.95rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s var(--ease), transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
   margin-bottom: 1rem;
 }
 
 .back-button:hover {
   background-color: #5a6268;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .applications-list {
@@ -60,6 +62,8 @@
   color: #666;
   font-style: italic;
   padding: 3rem;
-  background-color: #f8f9fa;
-  border-radius: 8px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border-radius: var(--radius-lg);
 }

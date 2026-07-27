@@ -1,7 +1,6 @@
 .signup-container {
   width: 100%;
   min-height: 100vh;
-  background: var(--cyf-light-bg);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,17 +10,18 @@
 
 .signup-container .login-container {
   width: 33rem;
-  background: var(--cyf-white);
-  padding: 2rem;
+  max-width: calc(100vw - 2rem);
+  background: var(--glass-bg-strong);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border);
+  padding: 1.8rem;
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--glass-shadow);
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--inner-bg);
-  padding: 1.8rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.5s var(--ease) both;
 }
 
 .signup-container .header h1 {
@@ -69,9 +69,17 @@ input, select {
 .signup-container select {
   padding: 12px;
   font-size: 1rem;
-  background: rgba(230, 230, 230, 0.8);
+  background: rgba(230, 230, 230, 0.6);
   border-radius: var(--radius);
   border: 1px solid var(--border-color);
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.signup-container input:focus,
+.signup-container select:focus {
+  outline: none;
+  border-color: var(--cyf-primary-red);
+  box-shadow: 0 0 0 2px rgba(238, 67, 68, 0.25);
 }
 
 .signup-container .password-validator {
@@ -97,10 +105,15 @@ select {
   font-weight: 700;
   padding: 12px;
   border-radius: var(--radius);
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s var(--ease), transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
 
 .signup-container #register-btn:hover {
-  background: #0c967f;
+  background: #d43536;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .signup-container .go-to-login {
@@ -125,4 +138,9 @@ select {
   border: none;
   cursor: pointer;
   color: #1a3a52;
+  transition: opacity 0.2s var(--ease);
+}
+
+.toggle-password-btn:hover {
+  opacity: 0.7;
 }

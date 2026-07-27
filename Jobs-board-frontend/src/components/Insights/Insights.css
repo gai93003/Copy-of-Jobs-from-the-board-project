@@ -2,6 +2,7 @@
   width: 100%;
   box-sizing: border-box;
   padding: 24px 24px 40px;
+  animation: fadeInUp 0.4s var(--ease) both;
 }
 
 /* HEADER */
@@ -30,7 +31,7 @@
 .timeframe-toggle {
   display: inline-flex;
   gap: 8px;
-  background: #f3f4f6;
+  background: rgba(243, 244, 246, 0.7);
   border-radius: 16px;
   padding: 4px;
 }
@@ -43,6 +44,7 @@
   border-radius: 16px;
   cursor: pointer;
   color: #4b5563;
+  transition: background-color 0.2s var(--ease), color 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
 
 .timeframe-chip--active {
@@ -54,10 +56,13 @@
 /* CARDS STRIP */
 
 .insights-strip {
-  background: white;
-  border-radius: 16px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
   padding: 16px 18px;
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  box-shadow: var(--glass-shadow);
   display: flex;
   overflow-x: auto;
   gap: 18px;
@@ -77,17 +82,23 @@
 }
 
 .stage-card {
-  background: #f9fafb;
+  background: rgba(249, 250, 251, 0.7);
   border-radius: 14px;
   padding: 14px 16px;
   width: 210px;
   height: 210px;
   box-shadow: 0 1px 3px rgba(15,23,42,0.04);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.stage-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
 }
 
 .stage-card--focus {
   border: 2px solid #3b82f6;
-  background: #eff6ff;
+  background: rgba(239, 246, 255, 0.85);
 }
 
 .stage-header {
@@ -167,8 +178,10 @@
 /* FEEDBACK PANEL */
 
 .feedback-panel {
-  background: #e5edff;
-  border-radius: 16px;
+  background: rgba(229, 237, 255, 0.7);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border-radius: var(--radius-lg);
   padding: 18px 18px 20px 20px;
 }
 

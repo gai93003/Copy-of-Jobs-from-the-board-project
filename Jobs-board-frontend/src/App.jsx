@@ -5,9 +5,12 @@ import {MentorPage} from './pages/mentorPage/MentorPage.jsx';
 import SignUp from "./pages/SignUp/SignUp.jsx";
 import StaffPage from "./pages/StaffPage/StaffPage.jsx";
 import ProtectedRoute from "./utils/staff.jsx";
+import ThreeBackground from "./components/ThreeBackground/ThreeBackground.jsx";
 
 function App() {
   return (
+    <>
+    <ThreeBackground />
     <Routes>
 
       <Route path="/" element={<Navigate to="/login" />} />
@@ -23,6 +26,7 @@ function App() {
       <Route path="/staff" element={<ProtectedRoute allowedRoles={["Staff"]}> <StaffPage /> </ProtectedRoute> } />
 
     </Routes>
+    </>
   );
 }
 

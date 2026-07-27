@@ -1,15 +1,12 @@
 .app-footer {
-  background: var(--cyf-white);
-  border-top: 1px solid var(--cyf-primary-red);
-  padding: 20px;
+  background: #ffffff;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 18px;
   text-align: center;
   font-size: 14px;
   margin-top: auto;
   color: var(--cyf-primary-dark);
-  position:sticky;
-  bottom: 0rem;
+  position: relative;
 }
-/* .app-footer {
-  position: static;  
-  margin-top: auto;
-} */

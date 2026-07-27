@@ -1,9 +1,3 @@
-/* ✅ GLOBAL SCROLL FIX */
-html, body {
-  height: auto;
-  overflow-y: auto;
-}
-
 /* ✅ MAIN PAGE */
 .staff-page {
   min-height: 100vh;
@@ -16,19 +10,16 @@ html, body {
   flex: 1;
   display: flex;
   min-height: 0;  /* ✅ REQUIRED for scrolling inside flex */
-  padding-top: 20px; 
+  gap: 18px;
+  padding: 18px 16px 0;
 }
 
 /* ✅ MAIN CONTENT AREA */
 .staff-content {
   flex: 1;
   overflow-y: auto;   /* ✅ ENABLE PAGE SCROLL */
-  padding: 5px;
-  padding-top: 5px;
-  padding-bottom: 80px;
-  /* background: var(--cyf-light-bg); */
-  background-color: transparent
-  ;
+  padding: 8px 0 80px;
+  background-color: transparent;
 }
 
 
@@ -43,32 +34,47 @@ html, body {
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 20px;
+  color: var(--cyf-primary-dark);
 }
 
 /* ✅ STAR JOBS TABLE */
 .staff-table {
   width: 100%;
   border-collapse: collapse;
-  background: var(--cyf-white);
-  border-radius: 10px;
-  /* overflow: hidden; */
-  margin-top: 20px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--radius-lg);
+  margin-top: 18px;
+  overflow: hidden;
 }
 
 /* ✅ STICKY HEADER (SO YOU CAN ALWAYS SEE IT) */
 .staff-table thead {
   position: sticky;
   top: 0;
-  background: #f5f5f5;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
   z-index: 10;
 }
 
 .staff-table th,
 .staff-table td {
   padding: 12px 14px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border-color);
   text-align: left;
   font-size: 14px;
+}
+
+.staff-table tbody tr {
+  transition: background-color 0.2s var(--ease);
+}
+
+.staff-table tbody tr:hover {
+  background-color: rgba(238, 67, 68, 0.06);
 }
 
 /* ✅ STATUS BADGE */
@@ -84,6 +90,7 @@ html, body {
   padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), opacity 0.2s var(--ease);
 }
 
 .staff-star-btn-remove {
@@ -93,17 +100,36 @@ html, body {
   padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), opacity 0.2s var(--ease);
 }
 
 .staff-star-btn:hover,
 .staff-star-btn-remove:hover {
   opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
-
 
 .staff-table-wrapper {
   max-height: calc(100vh - 240px);  /* ✅ Leaves space for header + title */
   overflow-y: auto;
   margin-top: 10px;
-  border-radius: 10px;
+  border-radius: var(--radius-lg);
+}
+
+@media (max-width: 768px) {
+  .staff-layout {
+    display: block;
+    padding: 12px 10px 0;
+  }
+
+  .staff-content {
+    padding: 8px 0 72px;
+  }
+
+  .staff-table th,
+  .staff-table td {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
 }

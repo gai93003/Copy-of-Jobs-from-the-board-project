@@ -29,7 +29,12 @@ function mapEmploymentType(externalType) {
 }
 
 export async function importJobsFromExternal(apiUrl = EXTERNAL_API_URL, baseJobUrl = DEVITJOBS_BASE_URL) {
-  const response = await fetch(apiUrl);
+  const response = await fetch(apiUrl, {
+    headers: {
+      accept: 'application/json',
+      'user-agent': 'Mozilla/5.0 (compatible; JobsBoardBot/1.0)',
+    },
+  });
   if (!response.ok) throw new Error('Failed to fetch jobs');
   const externalJobs = await response.json();
 

@@ -15,7 +15,7 @@ export default function Header({ onToggleSidebar }) {
           {/* <button className="header-link">Dashboard</button> */}
           {user && user.full_name && (
             <h2 className="welcome-text">
-              Welcome,{user.full_name.toUpperCase()}
+              Welcome, {user.full_name.toUpperCase()}
             </h2>
           )}
           {/* <button className="header-link">Profile</button> */}

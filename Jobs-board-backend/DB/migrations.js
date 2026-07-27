@@ -1,5 +1,11 @@
 import dotenv from "dotenv";
-dotenv.config({ path: "./.env" });
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+dotenv.config({ path: path.resolve(__dirname, "../.env") });
 import { importJobsFromExternal } from "../services/externalJobsService.js";
 import pkg from "pg";
 import fs from "fs";
@@ -44,7 +50,7 @@ async function ensureTables() {
   });
   await client.connect();
 
-  const sql = fs.readFileSync("./DB/db_setup.sql", "utf8");
+  const sql = fs.readFileSync(path.resolve(__dirname, "db_setup.sql"), "utf8");
   await client.query(sql);
 
   console.log("Tables & enums ensured.");
@@ -54,6 +60,10 @@ async function ensureTables() {
 export async function runSetup() {
   await ensureDatabase();
   await ensureTables();
-  await importJobsFromExternal();
+  try {
+    await importJobsFromExternal();
+  } catch (error) {
+    console.warn('⚠️ External job import skipped:', error.message);
+  }
 }
 
